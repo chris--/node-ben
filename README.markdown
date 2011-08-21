@@ -3,6 +3,8 @@ ben
 
 Benchmark synchronous and asynchronous snippets simply.
 
+![ben the big](http://substack.net/images/ben.png)
+
 examples
 ========
 
