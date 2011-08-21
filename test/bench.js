@@ -1,26 +1,28 @@
-var assert = require('assert');
-var bend = require('../');
+var test = require('tap').test;
+var ben = require('../');
 
-exports.parse = function () {
-    var a = bend(1000, function () {
+test('parse', function (t) {
+    var a = ben(1000, function () {
         JSON.parse('[1,2,3]')
     });
-    assert.ok(a < 1);
-    assert.ok(a > 0);
+    t.ok(a < 1);
+    t.ok(a > 0);
     
-    var b = bend(function () {
+    var b = ben(function () {
         JSON.parse('[ 1 , 2 , 3 ]')
     });
-    assert.ok(b < 1);
-    assert.ok(b > 0);
+    t.ok(b < 1);
+    t.ok(b > 0);
     
-    assert.ok(Math.abs(a - b) < 0.01);
+    t.ok(Math.abs(a - b) < 0.01);
     
-    var c = bend(function () {
+    var c = ben(function () {
         eval('[1,2,3]')
     });
-    assert.ok(c < 1);
-    assert.ok(c > 0);
+    t.ok(c < 1);
+    t.ok(c > 0);
     
-    assert.ok(Math.abs(a - c) < 0.1);
-};
+    t.ok(Math.abs(a - c) < 0.1);
+    
+    t.end();
+});

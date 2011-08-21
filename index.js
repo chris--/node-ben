@@ -1,4 +1,4 @@
-var bend = module.exports = function (times, cb) {
+var ben = module.exports = function (times, cb) {
     if (typeof times === 'function') {
         cb = times;
         times = 10000;
@@ -13,7 +13,7 @@ var bend = module.exports = function (times, cb) {
     return elapsed / times;
 };
 
-bend.async = function (times, cb, resultCb) {
+ben.async = function (times, cb, resultCb) {
     if (typeof times === 'function') {
         cb = times;
         times = 10000;
@@ -23,7 +23,8 @@ bend.async = function (times, cb, resultCb) {
     var t0 = Date.now();
     cb(function fn () {
         if (--pending === 0) {
-            resultCb(Date.now() - t0);
+            var elapsed = Date.now() - t0;
+            resultCb(elapsed / times);
         }
         else {
             cb(fn);
