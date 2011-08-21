@@ -16,7 +16,7 @@ var ben = module.exports = function (times, cb) {
 ben.async = function (times, cb, resultCb) {
     if (typeof times === 'function') {
         cb = times;
-        times = 10000;
+        times = 100;
     }
     
     var pending = times;
