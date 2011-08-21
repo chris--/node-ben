@@ -1,3 +1,4 @@
+var assert = require('assert');
 var seat = require('../');
 
 exports.parse = function () {
@@ -21,5 +22,5 @@ exports.parse = function () {
     assert.ok(c < 1);
     assert.ok(c > 0);
     
-    assert.ok(Math.abs(a - c) < 0.01);
+    assert.ok(Math.abs(a - c) < 0.1);
 };
