@@ -55,11 +55,11 @@ ben.suiteAsync = function(times, cbs, resultCb) {
         cb(function fn() { //die einzelnen cbs (tests) aufrufen
             elapsed += Date.now() - t;
             if (--pending === 0) {
-              results.push([{
-                "Testfnname": cb.name,
+              results.push({
+                "functionname": cb.name,
                 "runs": (times - pending),
-                "time in ms": (elapsed / times)
-              }]);
+                "ms": (elapsed / times)
+              });
               if (results.length === cbs.length) {
                 resultCb(results);
               }
