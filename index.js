@@ -54,7 +54,7 @@ ben.suiteAsync = function(times, cbs, resultCb) {
         var elapsed = 0; //anzahl der abgeschlossenen Tests
         cb(function fn() { //die einzelnen cbs (tests) aufrufen
             elapsed += Date.now() - t;
-            if (--pending <= 0) {
+            if (--pending === 0) {
               results.push([{
                 "Testfnname": cb.name,
                 "runs": (times - pending),
