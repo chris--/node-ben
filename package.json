@@ -1,5 +1,5 @@
 {
-    "name" : "aben",
+    "name" : "ben",
     "version" : "0.0.0",
     "description" : "simple timing benchmarks for synchronous and asynchronous code",
     "main" : "index.js",
