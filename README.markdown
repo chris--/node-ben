@@ -1,5 +1,28 @@
+
 ben
 ===
+
+chris-- added ability to store the tests in a suite and run them synchronosly
+-------
+
+example with socket.io:
+
+var test1 = function test1AdduserPete(done) {
+    socket1.emit('socket.adduser', {
+      name: "pete"
+    }, done);
+  };
+
+var test2 = function testDoSomethingThatTakesLong(done) {
+	socket2.emit('socket.doSomethingThatTakesLong', {
+		something: "darkside"
+	}, done);
+};
+
+ben.suiteAsync(1, [test1, test2], function(results) {
+  console.log(results);
+});
+
 
 Benchmark synchronous and asynchronous snippets simply.
 

@@ -1,5 +1,5 @@
 {
-    "name" : "ben",
+    "name" : "aben",
     "version" : "0.0.0",
     "description" : "simple timing benchmarks for synchronous and asynchronous code",
     "main" : "index.js",
@@ -16,7 +16,7 @@
     },
     "repository" : {
         "type" : "git",
-        "url" : "http://github.com/substack/node-ben.git"
+        "url" : "http://github.com/chris--/node-ben.git"
     },
     "keywords" : [
         "benchmark",
@@ -25,9 +25,9 @@
         "stopwatch"
     ],
     "author" : {
-        "name" : "James Halliday",
-        "email" : "mail@substack.net",
-        "url" : "http://substack.net"
+        "name" : "James Halliday, Christian Vogt",
+        "email" : "mail@substack.net, mail@christianvogt.de",
+        "url" : "http://substack.net, http://christianvogt.de"
     },
     "license" : "MIT/X11",
     "engine" : { "node" : ">=0.4" }

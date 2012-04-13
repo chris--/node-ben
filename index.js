@@ -37,3 +37,36 @@ ben.async = function (times, cb, resultCb) {
         }
     });
 };
+
+
+ben.suiteAsync = function(times, cbs, resultCb) {
+    if (typeof times === 'function') {
+        resultCb = cb;
+        cb = times;
+        times = 100;
+    }
+    
+    var results = []; //array for results
+    
+    cbs.forEach(function(cb) {
+        var pending = times; //jede testFn times mal ausfuehren
+        var t = Date.now(); //derzeitiges Datum speichern
+        var elapsed = 0; //anzahl der abgeschlossenen Tests
+        cb(function fn() { //die einzelnen cbs (tests) aufrufen
+            elapsed += Date.now() - t;
+            if (--pending <= 0) {
+              results.push([{
+                "Testfnname": cb.name,
+                "runs": (times - pending),
+                "time in ms": (elapsed / times)
+              }]);
+              if (results.length === cbs.length) {
+                resultCb(results);
+              }
+            } else {
+              t = Date.now();
+              cb(fn);
+            }
+          });
+    });
+};
