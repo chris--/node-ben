@@ -1,8 +1,7 @@
-
 ben
 ===
 
-chris-- added ability to store the tests in a suite and run them synchronosly
+chris-- added ability to store the tests in a suite and run them synchronously
 -------
 
 example with socket.io:
